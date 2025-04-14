@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
                 "北京卫视", "江苏卫视", "东方卫视", "浙江卫视", "湖南卫视", "湖北卫视",
                 "广东卫视", "广西卫视", "黑龙江卫视", "海南卫视", "重庆卫视", "深圳卫视",
                 "四川卫视", "河南卫视", "福建东南卫视", "贵州卫视", "江西卫视", "辽宁卫视",
-                "安徽卫视", "河北卫视", "山西卫视","央视频 CCTV1"
+                "安徽卫视", "河北卫视", "山东卫视", "央视频CCTV1"
         };
 
         // 动态生成地方台按钮
@@ -592,7 +592,7 @@ public class MainActivity extends AppCompatActivity {
                             info += elementValueNext;
                         }
                     });
-                } else if (currentLiveIndex <= 41) {
+                } else if (currentLiveIndex <= 42) {
                     // 获取当前节目
                     view.evaluateJavascript(
                             "document.getElementsByClassName(\"tvSelectJiemu\")[0].innerHTML + \" \" + document.getElementsByClassName(\"tvSelectJiemu\")[1].innerHTML",
