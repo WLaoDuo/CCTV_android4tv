@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             "https://www.yangshipin.cn/tv/home?pid=600002525", "https://www.yangshipin.cn/tv/home?pid=600002484",
             "https://www.yangshipin.cn/tv/home?pid=600002490", "https://www.yangshipin.cn/tv/home?pid=600002503",
             "https://www.yangshipin.cn/tv/home?pid=600002505", "https://www.yangshipin.cn/tv/home?pid=600002532",
-            "https://www.yangshipin.cn/tv/home?pid=600002493", "https://www.yangshipin.cn/tv/home?pid=600001859",
+            "https://www.yangshipin.cn/tv/home?pid=600002493", "https://www.yangshipin.cn/tv/home?pid=600002513",
             "https://www.yangshipin.cn/tv/home?pid=600001859", // 新增 央视频 CCTV1
             };
 
