@@ -592,7 +592,7 @@ public class MainActivity extends AppCompatActivity {
                             info += elementValueNext;
                         }
                     });
-                } else if (currentLiveIndex <= 40) {
+                } else if (currentLiveIndex <= 41) {
                     // 获取当前节目
                     view.evaluateJavascript(
                             "document.getElementsByClassName(\"tvSelectJiemu\")[0].innerHTML + \" \" + document.getElementsByClassName(\"tvSelectJiemu\")[1].innerHTML",
