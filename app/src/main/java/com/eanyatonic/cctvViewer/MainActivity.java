@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             "https://www.yangshipin.cn/tv/home?pid=600002490", "https://www.yangshipin.cn/tv/home?pid=600002503",
             "https://www.yangshipin.cn/tv/home?pid=600002505", "https://www.yangshipin.cn/tv/home?pid=600002532",
             "https://www.yangshipin.cn/tv/home?pid=600002493", "https://www.yangshipin.cn/tv/home?pid=600002513",
-            "https://www.yangshipin.cn/tv/home?pid=600001859", // 新增 央视频 CCTV1
+            "https://www.yangshipin.cn/tv/home?pid=600001859", "https://www.yangshipin.cn/tv/home?pid=600001811",
             };
 
     private final String[] channelNames = { "1 CCTV-1 综合", "2 CCTV-2 财经", "3 CCTV-3 综艺", "4 CCTV-4 中文国际（亚）",
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             "21 北京卫视", "22 江苏卫视","23 东方卫视", "24 浙江卫视", "25 湖南卫视", "26 湖北卫视", 
             "27 广东卫视", "28 广西卫视", "29 黑龙江卫视", "30 海南卫视", "31 重庆卫视","32 深圳卫视", 
             "33 四川卫视", "34 河南卫视", "35 福建东南卫视", "36 贵州卫视", "37 江西卫视", "38 辽宁卫视",
-            "39 安徽卫视", "40 河北卫视","41 山东卫视","42 央视频CCTV1", 
+            "39 安徽卫视", "40 河北卫视","41 山东卫视","42 央视频CCTV1", "43 央视频cctv13",
             };
     private final String[] cctvChannels = {
             "CCTV-1 综合", "CCTV-2 财经", "CCTV-3 综艺", "CCTV-4 中文国际（亚）",
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             "北京卫视", "江苏卫视", "东方卫视", "浙江卫视", "湖南卫视", "湖北卫视",
             "广东卫视", "广西卫视", "黑龙江卫视", "海南卫视", "重庆卫视", "深圳卫视",
             "四川卫视", "河南卫视", "福建东南卫视", "贵州卫视", "江西卫视", "辽宁卫视",
-            "安徽卫视", "河北卫视", "山东卫视", "央视频CCTV1",
+            "安徽卫视", "河北卫视", "山东卫视", "央视频CCTV1", "央视频cctv13",
             };
     private int currentLiveIndex;
 
