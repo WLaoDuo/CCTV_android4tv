@@ -460,7 +460,7 @@ public class MainActivity extends AppCompatActivity {
                             info += elementValueNext;
                         }
                     });
-                } else if (currentLiveIndex <= 40) {
+                } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                     // 获取当前节目
                     view.evaluateJavascript(
                             "document.getElementsByClassName(\"tvSelectJiemu\")[0].innerHTML + \" \" + document.getElementsByClassName(\"tvSelectJiemu\")[1].innerHTML",
@@ -592,7 +592,7 @@ public class MainActivity extends AppCompatActivity {
                             info += elementValueNext;
                         }
                     });
-                } else if (currentLiveIndex <= 42) {
+                } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                     // 获取当前节目
                     view.evaluateJavascript(
                             "document.getElementsByClassName(\"tvSelectJiemu\")[0].innerHTML + \" \" + document.getElementsByClassName(\"tvSelectJiemu\")[1].innerHTML",
@@ -708,7 +708,7 @@ public class MainActivity extends AppCompatActivity {
                                 simulateTouch(webView0, 0.5f, 0.5f);
                             }
                         });
-            } else if (currentLiveIndex <= 40) {
+            } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                 String scriptPlay = """
                         try{
                         if(document.querySelector('.voice.on').style.display == 'none'){
@@ -769,7 +769,7 @@ public class MainActivity extends AppCompatActivity {
                             // 播放
                             if (currentLiveIndex <= 19) {
                                 simulateTouch(getCurrentWebview(), 0.5f, 0.5f);
-                            } else if (currentLiveIndex <= 40) {
+                            } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                                 String scriptPause = """
                                         try{
                                         document.querySelector('.play.play2').click();
@@ -799,7 +799,7 @@ public class MainActivity extends AppCompatActivity {
 
                             if (currentLiveIndex <= 19) {
                                 getCurrentWebview().evaluateJavascript(script1, null);
-                            } else if (currentLiveIndex <= 40) {
+                            } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                                 new Handler().postDelayed(() -> {
                                     getCurrentWebview().evaluateJavascript(script2, null);
                                 }, 500);
