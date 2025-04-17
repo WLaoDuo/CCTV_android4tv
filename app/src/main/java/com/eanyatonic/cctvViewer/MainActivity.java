@@ -459,7 +459,7 @@ public class MainActivity extends AppCompatActivity {
                 // 清空info
                 info = "";
 
-                if (currentLiveIndex <= 19) {
+                if (currentLiveIndex <= (cctvChannels.length-1)) {
                     // 获取节目预告和当前节目
                     view.evaluateJavascript("document.querySelector('#jiemu > li.cur.act').innerText", value -> {
                         // 处理获取到的元素值
@@ -591,7 +591,7 @@ public class MainActivity extends AppCompatActivity {
                 // 清空info
                 info = "";
 
-                if (currentLiveIndex <= 19) {
+                if (currentLiveIndex <= (cctvChannels.length-1)) {
                     // 获取节目预告和当前节目
                     view.evaluateJavascript("document.querySelector('#jiemu > li.cur.act').innerText", value -> {
                         // 处理获取到的元素值
@@ -714,7 +714,7 @@ public class MainActivity extends AppCompatActivity {
     // 获取 div 元素的 display 属性并执行相应的操作
     private void getDivDisplayPropertyAndDoSimulateTouch() {
         if (webView0 != null) {
-            if (currentLiveIndex <= 19) {
+            if (currentLiveIndex <= (cctvChannels.length-1)) {
                 webView0.evaluateJavascript("document.getElementById('play_or_pause_play_player').style.display",
                         value -> {
                             // 处理获取到的 display 属性值
@@ -782,7 +782,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 1:
                             // 播放
-                            if (currentLiveIndex <= 19) {
+                            if (currentLiveIndex <= (cctvChannels.length-1)) {
                                 simulateTouch(getCurrentWebview(), 0.5f, 0.5f);
                             } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                                 String scriptPause = """
@@ -812,7 +812,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     """;
 
-                            if (currentLiveIndex <= 19) {
+                            if (currentLiveIndex <= (cctvChannels.length-1)) {
                                 getCurrentWebview().evaluateJavascript(script1, null);
                             } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                                 new Handler().postDelayed(() -> {
@@ -959,12 +959,12 @@ public class MainActivity extends AppCompatActivity {
                     // 方向键,切换频道选择
                     if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP) {
                         if (SubMenuCCTVSelectedIndex == 0) {
-                            SubMenuCCTVSelectedIndex = 19;
+                            SubMenuCCTVSelectedIndex = (cctvChannels.length-1);
                         } else {
                             SubMenuCCTVSelectedIndex--;
                         }
                     } else if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_DOWN) {
-                        if (SubMenuCCTVSelectedIndex == 19) {
+                        if (SubMenuCCTVSelectedIndex == (cctvChannels.length-1)) {
                             SubMenuCCTVSelectedIndex = 0;
                         } else {
                             SubMenuCCTVSelectedIndex++;
@@ -1006,12 +1006,12 @@ public class MainActivity extends AppCompatActivity {
                     // 方向键,切换频道选择
                     if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP) {
                         if (SubMenuLocalSelectedIndex == 0) {
-                            SubMenuLocalSelectedIndex = 20;
+                            SubMenuLocalSelectedIndex = cctvChannels.length;
                         } else {
                             SubMenuLocalSelectedIndex--;
                         }
                     } else if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_DOWN) {
-                        if (SubMenuLocalSelectedIndex == 20) {
+                        if (SubMenuLocalSelectedIndex == cctvChannels.length) {
                             SubMenuLocalSelectedIndex = 0;
                         } else {
                             SubMenuLocalSelectedIndex++;
@@ -1023,7 +1023,7 @@ public class MainActivity extends AppCompatActivity {
                         || event.getKeyCode() == KeyEvent.KEYCODE_ENTER
                         || event.getKeyCode() == KeyEvent.KEYCODE_DPAD_RIGHT) {
                     // 中间键,执行按钮操作
-                    currentLiveIndex = SubMenuLocalSelectedIndex + 20;
+                    currentLiveIndex = SubMenuLocalSelectedIndex + cctvChannels.length;
                     loadLiveUrl();
                     saveCurrentLiveIndex();
                     showChannelList();
@@ -1103,7 +1103,7 @@ public class MainActivity extends AppCompatActivity {
             DrawerLayoutDetailed.setVisibility(View.VISIBLE);
             DrawerLayout.setVisibility(View.VISIBLE);
             isDrawerOverlayVisible = true;
-            if (currentLiveIndex < 20) {
+            if (currentLiveIndex < cctvChannels.length) {
                 SubMenuCCTV.setVisibility(View.VISIBLE);
                 findViewById(R.id.CCTVScroll).setVisibility(View.VISIBLE);
                 SubMenuCCTV.getChildAt(currentLiveIndex).requestFocus();
@@ -1112,8 +1112,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(currentLiveIndex - 20).requestFocus();
-                SubMenuLocalSelectedIndex = currentLiveIndex - 20;
+                SubMenuLocal.getChildAt(currentLiveIndex - cctvChannels.length).requestFocus();
+                SubMenuLocalSelectedIndex = currentLiveIndex - cctvChannels.length;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
@@ -1133,7 +1133,7 @@ public class MainActivity extends AppCompatActivity {
             DrawerLayoutDetailed.setVisibility(View.VISIBLE);
             DrawerLayout.setVisibility(View.VISIBLE);
             isDrawerOverlayVisible = true;
-            if (selectIndex < 20) {
+            if (selectIndex < cctvChannels.length ) {
                 SubMenuCCTV.setVisibility(View.VISIBLE);
                 findViewById(R.id.CCTVScroll).setVisibility(View.VISIBLE);
                 SubMenuCCTV.getChildAt(selectIndex).requestFocus();
@@ -1142,8 +1142,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(selectIndex - 20).requestFocus();
-                SubMenuLocalSelectedIndex = selectIndex - 20;
+                SubMenuLocal.getChildAt(selectIndex - cctvChannels.length).requestFocus();
+                SubMenuLocalSelectedIndex = selectIndex - cctvChannels.length;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
@@ -1222,7 +1222,7 @@ public class MainActivity extends AppCompatActivity {
 
             getCurrentWebview().setInitialScale(getMinimumScale());
             getCurrentWebview().loadUrl(liveUrls[currentLiveIndex]);
-            if (currentLiveIndex > 19) {
+            if (currentLiveIndex > (cctvChannels.length -1) ) {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
