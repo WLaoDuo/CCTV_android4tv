@@ -1006,12 +1006,12 @@ public class MainActivity extends AppCompatActivity {
                     // 方向键,切换频道选择
                     if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP) {
                         if (SubMenuLocalSelectedIndex == 0) {
-                            SubMenuLocalSelectedIndex = cctvChannels.length;
+                            SubMenuLocalSelectedIndex = localChannels.length-1;
                         } else {
                             SubMenuLocalSelectedIndex--;
                         }
                     } else if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_DOWN) {
-                        if (SubMenuLocalSelectedIndex == cctvChannels.length) {
+                        if (SubMenuLocalSelectedIndex == localChannels.length-1) {
                             SubMenuLocalSelectedIndex = 0;
                         } else {
                             SubMenuLocalSelectedIndex++;
