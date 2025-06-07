@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             "安徽卫视", "河北卫视", "山东卫视", "央视频CCTV1", "央视频cctv13",
             "cctv7", "cctv14","cgtn",
             };
-    public static final string DEFAULT_USER_AGENT ="Mozilla/5.0 (Android 10; Mobile; rv:91.0) Gecko/91.0 Firefox/91.0";
+    public static final String DEFAULT_USER_AGENT ="Mozilla/5.0 (Android 10; Mobile; rv:91.0) Gecko/91.0 Firefox/91.0";
     
     private int currentLiveIndex;
 
