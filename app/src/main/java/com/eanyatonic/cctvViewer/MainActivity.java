@@ -110,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
             "安徽卫视", "河北卫视", "山东卫视", "央视频CCTV1", "央视频cctv13",
             "cctv7", "cctv14","cgtn",
             };
+    public static final string DEFAULT_USER_AGENT ="Mozilla/5.0 (Android 10; Mobile; rv:91.0) Gecko/91.0 Firefox/91.0";
+    
     private int currentLiveIndex;
 
     private static final String PREF_NAME = "MyPreferences";
@@ -361,8 +363,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setLoadsImagesAutomatically(false); // 禁用自动加载图片
         webSettings.setBlockNetworkImage(true); // 禁用网络图片加载
         webSettings.setMediaPlaybackRequiresUserGesture(false);
-        webSettings.setUserAgent(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
+        webSettings.setUserAgent(DEFAULT_USER_AGENT);
 
         // 启用缓存
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
@@ -378,8 +379,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings1.setLoadsImagesAutomatically(false); // 禁用自动加载图片
         webSettings1.setBlockNetworkImage(true); // 禁用网络图片加载
         webSettings1.setMediaPlaybackRequiresUserGesture(false);
-        webSettings1.setUserAgent(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
+        webSettings1.setUserAgent(DEFAULT_USER_AGENT);
 
         // 启用缓存
         webSettings1.setCacheMode(WebSettings.LOAD_DEFAULT);
