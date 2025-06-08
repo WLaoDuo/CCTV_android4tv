@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
     private int currentWebView = 0; // 正在使用的webView
     private boolean isChanging = false; // 是否正在换台
 
-    private final String[] liveUrls = { "https://tv.cctv.com/live/cctv1/", "https://tv.cctv.com/live/cctv2/",
+    private final String[] liveUrls = { "https://tv.cctv.com/live/cctv1/m/", "https://tv.cctv.com/live/cctv2/",
             "https://tv.cctv.com/live/cctv3/", "https://tv.cctv.com/live/cctv4/", "https://tv.cctv.com/live/cctv5/",
             "https://tv.cctv.com/live/cctv6/", "https://tv.cctv.com/live/cctv7/", "https://tv.cctv.com/live/cctv8/",
             "https://tv.cctv.com/live/cctvjilu", "https://tv.cctv.com/live/cctv10/", "https://tv.cctv.com/live/cctv11/",
-            "https://tv.cctv.com/live/cctv12/", "https://tv.cctv.com/live/cctv13/",
-            "https://tv.cctv.com/live/cctvchild", "https://tv.cctv.com/live/cctv15/",
+            "https://tv.cctv.com/live/cctv12/", "https://tv.cctv.com/live/cctv13/m/",
+            "https://tv.cctv.com/live/cctvchild/m/", "https://tv.cctv.com/live/cctv15/",
             "https://tv.cctv.com/live/cctv16/", "https://tv.cctv.com/live/cctv17/",
             "https://tv.cctv.com/live/cctv5plus/", "https://tv.cctv.com/live/cctveurope",
             "https://tv.cctv.com/live/cctvamerica/", "https://www.yangshipin.cn/tv/home?pid=600002309",
