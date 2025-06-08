@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
             "cctv7", "cctv14","cgtn",
             };
     public static final String DEFAULT_USER_AGENT ="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36";
+    public static final String Mobile_USERAGENT="Mozilla/5.0 (Android 13; Mobile; rv:138.0) Gecko/138.0 Firefox/138.0";
     
     private int currentLiveIndex;
 
@@ -360,8 +361,8 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
         webSettings.setDatabaseEnabled(true);
-        webSettings.setLoadsImagesAutomatically(false); // 禁用自动加载图片
-        webSettings.setBlockNetworkImage(true); // 禁用网络图片加载
+        webSettings.setLoadsImagesAutomatically(true); // 禁用自动加载图片
+        webSettings.setBlockNetworkImage(false); // 禁用网络图片加载
         webSettings.setMediaPlaybackRequiresUserGesture(false);
         webSettings.setUserAgent(DEFAULT_USER_AGENT);
 
@@ -804,7 +805,7 @@ public class MainActivity extends AppCompatActivity {
                             // 切换全屏
                             String script1 = """
                                     console.log('点击全屏按钮');
-                                    document.querySelector('#player_pagefullscreen_yes_player').click();
+                                    document.querySelector('#player_pagefullscreen_no_player').click();
                                     """;
 
                             String script2 = """
