@@ -364,7 +364,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setLoadsImagesAutomatically(true); // 禁用自动加载图片
         webSettings.setBlockNetworkImage(false); // 禁用网络图片加载
         webSettings.setMediaPlaybackRequiresUserGesture(false);
-        webSettings.setUserAgent(DEFAULT_USER_AGENT);
+        webSettings.setUserAgent(Mobile_USERAGENT);
 
         // 启用缓存
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
