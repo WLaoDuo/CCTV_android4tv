@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
             "https://www.yangshipin.cn/tv/home?pid=600002505", "https://www.yangshipin.cn/tv/home?pid=600002532",
             "https://www.yangshipin.cn/tv/home?pid=600002493", "https://www.yangshipin.cn/tv/home?pid=600002513",
             "https://www.yangshipin.cn/tv/home?pid=600001859", "https://www.yangshipin.cn/tv/home?pid=600001811",
-            "https://www.yangshipin.cn/tv/home?pid=600004092", "https://www.yangshipin.cn/tv/home?pid=600001809",
-            "https://www.yangshipin.cn/tv/home?pid=600014550",
+            "https://www.yangshipin.cn/tv/home?pid=600108442", "https://www.yangshipin.cn/tv/home?pid=600004092", 
+            "https://www.yangshipin.cn/tv/home?pid=600001809", "https://www.yangshipin.cn/tv/home?pid=600014550",
             };
 
     private final String[] channelNames = { "1 CCTV-1 综合", "2 CCTV-2 财经", "3 CCTV-3 综艺", "4 CCTV-4 中文国际（亚）",
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             "27 广东卫视", "28 广西卫视", "29 黑龙江卫视", "30 海南卫视", "31 重庆卫视","32 深圳卫视", 
             "33 四川卫视", "34 河南卫视", "35 福建东南卫视", "36 贵州卫视", "37 江西卫视", "38 辽宁卫视",
             "39 安徽卫视", "40 河北卫视","41 山东卫视","42 央视频CCTV1", "43 央视频cctv13",
-            "44 cctv7", "45 cctv14","46 cgtn",
+            "44 央视频cctv6","45 央视频cctv7", "46 央视频cctv14","47 央视频cgtn",
             };
     private final String[] cctvChannels = {
             "CCTV-1 综合", "CCTV-2 财经", "CCTV-3 综艺", "CCTV-4 中文国际（亚）",
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             "广东卫视", "广西卫视", "黑龙江卫视", "海南卫视", "重庆卫视", "深圳卫视",
             "四川卫视", "河南卫视", "福建东南卫视", "贵州卫视", "江西卫视", "辽宁卫视",
             "安徽卫视", "河北卫视", "山东卫视", "央视频CCTV1", "央视频cctv13",
-            "cctv7", "cctv14","cgtn",
+            "央视频cctv6","央视频cctv7", "央视频cctv14","央视频cgtn",
             };
     public static final String DEFAULT_USER_AGENT ="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36";
     public static final String Mobile_USERAGENT="Mozilla/5.0 (Android 13; Mobile; rv:138.0) Gecko/138.0 Firefox/138.0";
