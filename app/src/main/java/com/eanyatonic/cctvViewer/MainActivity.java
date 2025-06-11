@@ -1182,12 +1182,39 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // private void updateInputTextView() {
+    //     // 在 TextView 中显示当前正在输入的数字
+    //     inputTextView.setVisibility(View.VISIBLE);
+    //     inputTextView.setText("换台：" + digitBuffer.toString());
+    // }
     private void updateInputTextView() {
         // 在 TextView 中显示当前正在输入的数字
         inputTextView.setVisibility(View.VISIBLE);
-        inputTextView.setText("换台：" + digitBuffer.toString());
-    }
 
+        // 获取当前的 URL 和 User-Agent
+        String currentUrl = "";
+        String userAgent = "";
+        WebView activeWebView = getCurrentWebview(); // 获取当前活跃的 WebView 实例
+
+        if (activeWebView != null) {
+            currentUrl = activeWebView.getUrl();
+            userAgent = activeWebView.getSettings().getUserAgentString();
+        }
+
+        // 构建要显示的完整文本内容
+        StringBuilder displayText = new StringBuilder();
+        displayText.append("换台：").append(digitBuffer.toString());
+
+        // 如果获取到 URL 和 User-Agent，则追加显示
+        if (currentUrl != null && !currentUrl.isEmpty()) {
+            displayText.append("\nURL:\n").append(currentUrl);
+        }
+        if (userAgent != null && !userAgent.isEmpty()) {
+            displayText.append("\nUser-Agent:\n").append(userAgent);
+        }
+
+        inputTextView.setText(displayText.toString());
+    }
     private void loadLastLiveIndex() {
         SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         currentLiveIndex = preferences.getInt(PREF_KEY_LIVE_INDEX, 0); // 默认值为0
