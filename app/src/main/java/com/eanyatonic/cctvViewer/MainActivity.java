@@ -61,15 +61,15 @@ public class MainActivity extends AppCompatActivity {
     private int currentWebView = 0; // 正在使用的webView
     private boolean isChanging = false; // 是否正在换台
 
-    private final String[] liveUrls = { "https://tv.cctv.com/live/cctv1/m/", "https://tv.cctv.com/live/cctv2/",
-            "https://tv.cctv.com/live/cctv3/", "https://tv.cctv.com/live/cctv4/", "https://tv.cctv.com/live/cctv5/",
-            "https://tv.cctv.com/live/cctv6/", "https://tv.cctv.com/live/cctv7/", "https://tv.cctv.com/live/cctv8/",
-            "https://tv.cctv.com/live/cctvjilu", "https://tv.cctv.com/live/cctv10/", "https://tv.cctv.com/live/cctv11/",
-            "https://tv.cctv.com/live/cctv12/", "https://tv.cctv.com/live/cctv13/m/",
-            "https://tv.cctv.com/live/cctvchild/m/", "https://tv.cctv.com/live/cctv15/",
-            "https://tv.cctv.com/live/cctv16/", "https://tv.cctv.com/live/cctv17/",
-            "https://tv.cctv.com/live/cctv5plus/", "https://tv.cctv.com/live/cctveurope",
-            "https://tv.cctv.com/live/cctvamerica/", "https://www.yangshipin.cn/tv/home?pid=600002309",
+    private final String[] liveUrls = { "https://tv.cctv.com/live/cctv1/m/", "https://tv.cctv.com/live/cctv2/m/",
+            "https://tv.cctv.com/live/cctv3/m/", "https://tv.cctv.com/live/cctv4/m/", "https://tv.cctv.com/live/cctv5/m/",
+            "https://tv.cctv.com/live/cctv6/m/", "https://tv.cctv.com/live/cctv7/m/", "https://tv.cctv.com/live/cctv8/m/",
+            "https://tv.cctv.com/live/cctvjilu/m/", "https://tv.cctv.com/live/cctv10/m/", "https://tv.cctv.com/live/cctv11/m/",
+            "https://tv.cctv.com/live/cctv12/m/", "https://tv.cctv.com/live/cctv13/m/",
+            "https://tv.cctv.com/live/cctvchild/m/", "https://tv.cctv.com/live/cctv15/m/",
+            "https://tv.cctv.com/live/cctv16/m/", "https://tv.cctv.com/live/cctv17/m/",
+            "https://tv.cctv.com/live/cctv5plus/m/", "https://tv.cctv.com/live/cctveurope/m/",
+            "https://tv.cctv.com/live/cctvamerica/m/", "https://www.yangshipin.cn/tv/home?pid=600002309",
             "https://www.yangshipin.cn/tv/home?pid=600002521", "https://www.yangshipin.cn/tv/home?pid=600002483",
             "https://www.yangshipin.cn/tv/home?pid=600002520", "https://www.yangshipin.cn/tv/home?pid=600002475",
             "https://www.yangshipin.cn/tv/home?pid=600002508", "https://www.yangshipin.cn/tv/home?pid=600002485",
@@ -413,47 +413,47 @@ public class MainActivity extends AppCompatActivity {
             // handler.proceed(); // 忽略 SSL 错误
             // }
 
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                // 页面加载时执行 JavaScript 脚本
-                view.evaluateJavascript(
-                        """
-                                function FastLoading() {
-                                             const fullscreenBtn = document.querySelector('#player_pagefullscreen_yes_player') || document.querySelector('.videoFull');
-                                             if (fullscreenBtn) return;
+            // @Override
+            // public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            //     // 页面加载时执行 JavaScript 脚本
+            //     view.evaluateJavascript(
+            //             """
+            //                     function FastLoading() {
+            //                                  const fullscreenBtn = document.querySelector('#player_pagefullscreen_yes_player') || document.querySelector('.videoFull');
+            //                                  if (fullscreenBtn) return;
 
-                                             // 清空所有图片的 src 属性，阻止图片加载
-                                             Array.from(document.getElementsByTagName('img')).forEach(img => {
-                                                 img.src = '';
-                                             });
+            //                                  // 清空所有图片的 src 属性，阻止图片加载
+            //                                  Array.from(document.getElementsByTagName('img')).forEach(img => {
+            //                                      img.src = '';
+            //                                  });
 
-                                             // 清空特定的脚本 src 属性
-                                             const scriptKeywords = ['login', 'index', 'daohang', 'grey', 'jquery'];
-                                             Array.from(document.getElementsByTagName('script')).forEach(script => {
-                                                 if (scriptKeywords.some(keyword => script.src.includes(keyword))) {
-                                                     script.src = '';
-                                                 }
-                                             });
+            //                                  // 清空特定的脚本 src 属性
+            //                                  const scriptKeywords = ['login', 'index', 'daohang', 'grey', 'jquery'];
+            //                                  Array.from(document.getElementsByTagName('script')).forEach(script => {
+            //                                      if (scriptKeywords.some(keyword => script.src.includes(keyword))) {
+            //                                          script.src = '';
+            //                                      }
+            //                                  });
 
-                                             // 清空具有特定 class 的 div 内容
-                                             const classNames = ['newmap', 'newtopbz', 'newtopbzTV', 'column_wrapper'];
-                                             classNames.forEach(className => {
-                                                 Array.from(document.getElementsByClassName(className)).forEach(div => {
-                                                     div.innerHTML = '';
-                                                 });
-                                             });
+            //                                  // 清空具有特定 class 的 div 内容
+            //                                  const classNames = ['newmap', 'newtopbz', 'newtopbzTV', 'column_wrapper'];
+            //                                  classNames.forEach(className => {
+            //                                      Array.from(document.getElementsByClassName(className)).forEach(div => {
+            //                                          div.innerHTML = '';
+            //                                      });
+            //                                  });
 
-                                             // 递归调用 FastLoading，每 4ms 触发一次
-                                             setTimeout(FastLoading, 4);
-                                         }
+            //                                  // 递归调用 FastLoading，每 4ms 触发一次
+            //                                  setTimeout(FastLoading, 4);
+            //                              }
 
-                                         FastLoading();
+            //                              FastLoading();
 
-                                """,
-                        value -> {
-                        });
-                super.onPageStarted(view, url, favicon);
-            }
+            //                     """,
+            //             value -> {
+            //             });
+            //     super.onPageStarted(view, url, favicon);
+            // }
 
             // 设置 WebViewClient，监听页面加载完成事件
             @Override
