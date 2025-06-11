@@ -788,7 +788,7 @@ public class MainActivity extends AppCompatActivity {
                         case 1:
                             // 播放
                             if (currentLiveIndex <= (cctvChannels.length-1)) {
-                                simulateTouch((), 0.5f, 0.5f);
+                                simulateTouch(webview0, 0.5f, 0.5f);
                             } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                                 String scriptPause = """
                                         try{
