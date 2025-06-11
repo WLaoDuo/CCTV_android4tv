@@ -413,47 +413,47 @@ public class MainActivity extends AppCompatActivity {
             // handler.proceed(); // 忽略 SSL 错误
             // }
 
-            // @Override
-            // public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            //     // 页面加载时执行 JavaScript 脚本
-            //     view.evaluateJavascript(
-            //             """
-            //                     function FastLoading() {
-            //                                  const fullscreenBtn = document.querySelector('#player_pagefullscreen_yes_player') || document.querySelector('.videoFull');
-            //                                  if (fullscreenBtn) return;
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                // 页面加载时执行 JavaScript 脚本
+                view.evaluateJavascript(
+                        """
+                                function FastLoading() {
+                                             const fullscreenBtn = document.querySelector('#player_pagefullscreen_yes_player') || document.querySelector('.videoFull');
+                                             if (fullscreenBtn) return;
 
-            //                                  // 清空所有图片的 src 属性，阻止图片加载
-            //                                  Array.from(document.getElementsByTagName('img')).forEach(img => {
-            //                                      img.src = '';
-            //                                  });
+                                             // 清空所有图片的 src 属性，阻止图片加载
+                                             Array.from(document.getElementsByTagName('img')).forEach(img => {
+                                                 img.src = '';
+                                             });
 
-            //                                  // 清空特定的脚本 src 属性
-            //                                  const scriptKeywords = ['login', 'index', 'daohang', 'grey', 'jquery'];
-            //                                  Array.from(document.getElementsByTagName('script')).forEach(script => {
-            //                                      if (scriptKeywords.some(keyword => script.src.includes(keyword))) {
-            //                                          script.src = '';
-            //                                      }
-            //                                  });
+                                             // 清空特定的脚本 src 属性
+                                             const scriptKeywords = ['login', 'index', 'daohang', 'grey', 'jquery'];
+                                             Array.from(document.getElementsByTagName('script')).forEach(script => {
+                                                 if (scriptKeywords.some(keyword => script.src.includes(keyword))) {
+                                                     script.src = '';
+                                                 }
+                                             });
 
-            //                                  // 清空具有特定 class 的 div 内容
-            //                                  const classNames = ['newmap', 'newtopbz', 'newtopbzTV', 'column_wrapper'];
-            //                                  classNames.forEach(className => {
-            //                                      Array.from(document.getElementsByClassName(className)).forEach(div => {
-            //                                          div.innerHTML = '';
-            //                                      });
-            //                                  });
+                                             // 清空具有特定 class 的 div 内容
+                                             const classNames = ['newmap', 'newtopbz', 'newtopbzTV', 'column_wrapper'];
+                                             classNames.forEach(className => {
+                                                 Array.from(document.getElementsByClassName(className)).forEach(div => {
+                                                     div.innerHTML = '';
+                                                 });
+                                             });
 
-            //                                  // 递归调用 FastLoading，每 4ms 触发一次
-            //                                  setTimeout(FastLoading, 4);
-            //                              }
+                                             // 递归调用 FastLoading，每 4ms 触发一次
+                                             setTimeout(FastLoading, 4);
+                                         }
 
-            //                              FastLoading();
+                                         FastLoading();
 
-            //                     """,
-            //             value -> {
-            //             });
-            //     super.onPageStarted(view, url, favicon);
-            // }
+                                """,
+                        value -> {
+                        });
+                super.onPageStarted(view, url, favicon);
+            }
 
             // 设置 WebViewClient，监听页面加载完成事件
             @Override
