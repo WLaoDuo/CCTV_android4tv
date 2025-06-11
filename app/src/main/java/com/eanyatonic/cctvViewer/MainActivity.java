@@ -788,7 +788,7 @@ public class MainActivity extends AppCompatActivity {
                         case 1:
                             // 播放
                             if (currentLiveIndex <= (cctvChannels.length-1)) {
-                                simulateTouch(getCurrentWebview(), 0.5f, 0.5f);
+                                simulateTouch((), 0.5f, 0.5f);
                             } else if (currentLiveIndex <= (channelNames.length - 1) ) {
                                 String scriptPause = """
                                         try{
@@ -1232,11 +1232,16 @@ public class MainActivity extends AppCompatActivity {
         if (!enableDualWebView) {
             return webView1;
         }
-        if (currentWebView == 0) {
+        if (currentLiveIndex < cctvChannels.length) { // 如果是 CCTV 频道
             return webView0;
         } else {
             return webView1;
         }
+        // if (currentWebView == 0) {
+        //     return webView0;
+        // } else {
+        //     return webView1;
+        // }
     }
 
     private void loadLiveUrl() {
