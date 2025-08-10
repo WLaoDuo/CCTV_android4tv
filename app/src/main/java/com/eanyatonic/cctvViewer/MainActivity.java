@@ -443,8 +443,8 @@ public class MainActivity extends AppCompatActivity {
                                                  });
                                              });
 
-                                             // 递归调用 FastLoading，每 4ms 触发一次
-                                             setTimeout(FastLoading, 4);
+                                             // 递归调用 FastLoading，每 100ms 触发一次
+                                             setTimeout(FastLoading, 100);
                                          }
 
                                          FastLoading();
@@ -575,8 +575,8 @@ public class MainActivity extends AppCompatActivity {
                                                  });
                                              });
 
-                                             // 递归调用 FastLoading，每 4ms 触发一次
-                                             setTimeout(FastLoading, 4);
+                                             // 递归调用 FastLoading，每 100ms 触发一次
+                                             setTimeout(FastLoading, 100);
                                          }
 
                                          FastLoading();
@@ -701,7 +701,7 @@ public class MainActivity extends AppCompatActivity {
     // 启动自动播放定时任务
     private void startPeriodicTask() {
         // 使用 postDelayed 方法设置定时任务
-        handler.postDelayed(periodicTask, 2000); // 2000 毫秒，即 2 秒钟
+        handler.postDelayed(periodicTask, 5000); // 5000 毫秒，即 5 秒钟
     }
 
     // 定时任务具体操作
